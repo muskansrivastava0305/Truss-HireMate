@@ -4,6 +4,7 @@ import Header from './Pages/Header'
 import Home from './Pages/Home'
 import Feature from './Pages/Feature'
 import DemoBooking from './Pages/DemoBooking'
+import Contact from './Pages/Contact'
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/feature" element={<Feature />} />
         <Route path="/demo-booking" element={<DemoBooking />} />
+        <Route path="/contact" element={<Contact/>}/>
       </Routes>
     </Router>
   )
