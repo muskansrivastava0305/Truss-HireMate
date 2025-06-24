@@ -4,19 +4,20 @@ import Header from './Pages/Header'
 import Home from './Pages/Home'
 import Feature from './Pages/Feature'
 import DemoBooking from './Pages/DemoBooking'
+import Footer from './Pages/Footer'
 import Contact from './Pages/Contact'
 
 const App = () => {
   return (
-    <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/feature" element={<Feature />} />
-        <Route path="/demo-booking" element={<DemoBooking />} />
-        <Route path="/contact" element={<Contact/>}/>
-      </Routes>
-    </Router>
+    <>
+    <Header />
+    <Home />
+    <Feature />
+    <DemoBooking />
+    <Contact />
+    <Footer />
+
+    </>
   )
 }
 
