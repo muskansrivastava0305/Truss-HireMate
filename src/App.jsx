@@ -4,17 +4,17 @@ import Header from './Pages/Header'
 import Home from './Pages/Home'
 import Feature from './Pages/Feature'
 import DemoBooking from './Pages/DemoBooking'
+import Footer from './Pages/Footer'
 
 const App = () => {
   return (
-    <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/feature" element={<Feature />} />
-        <Route path="/demo-booking" element={<DemoBooking />} />
-      </Routes>
-    </Router>
+    <>
+    <Header />
+    <Home />
+    <Feature />
+    <DemoBooking />
+    <Footer />
+    </>
   )
 }
 
