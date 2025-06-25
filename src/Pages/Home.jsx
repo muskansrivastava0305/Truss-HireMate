@@ -1,6 +1,6 @@
 import React from "react";
 import { IoIosArrowRoundForward } from "react-icons/io";
-import Blob from "../assets/Blob.svg";
+import Blob from "../assets/blob.svg";
 import { animate, motion } from "framer-motion";
 import { Link } from "react-scroll";
 
