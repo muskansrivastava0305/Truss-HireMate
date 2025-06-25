@@ -6,16 +6,37 @@ import Feature from './Pages/Feature'
 import DemoBooking from './Pages/DemoBooking'
 import Footer from './Pages/Footer'
 import Contact from './Pages/Contact'
+import TestimonialSection from './Pages/Testimonial'
 
 const App = () => {
   return (
     <>
-    <Header />
+   <>
+  <Header />
+
+  <div id="home">
     <Home />
+  </div>
+
+  <div id="features">
     <Feature />
+  </div>
+
+  <div id="demo">
     <DemoBooking />
+  </div>
+
+  <div id="testimonials">
+    <TestimonialSection />
+  </div>
+
+  <div id="contact">
     <Contact />
-    <Footer />
+  </div>
+
+  <Footer />
+</>
+
 
     </>
   )

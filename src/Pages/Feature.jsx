@@ -93,7 +93,7 @@ const howItWorksRef = useRef(null);
             {features.map((feature, index) => (
               <div
                 key={index}
-                className={`group p-8 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 animate-fade-in-up"
+                className={`group p-8 rounded-2xl bg-gray-50 hover:bg-[#02786481] hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-fade-in-up"
  ${
                   isVisible.features ? "animate-fade-in-up" : "opacity-0"
                 }`}
