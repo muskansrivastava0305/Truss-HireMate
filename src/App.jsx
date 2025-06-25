@@ -5,6 +5,7 @@ import Home from './Pages/Home'
 import Feature from './Pages/Feature'
 import DemoBooking from './Pages/DemoBooking'
 import Footer from './Pages/Footer'
+import Contact from './Pages/Contact'
 
 const App = () => {
   return (
@@ -13,7 +14,9 @@ const App = () => {
     <Home />
     <Feature />
     <DemoBooking />
+    <Contact />
     <Footer />
+
     </>
   )
 }
