@@ -1,13 +1,13 @@
-
-import { ArrowRight } from "lucide-react"
-import { useEffect, useState } from "react"
+import { ArrowRight } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Link } from "react-scroll";
 
 export default function Hero() {
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    setIsVisible(true)
-  }, [])
+    setIsVisible(true);
+  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 to-green-100 relative overflow-hidden">
@@ -33,7 +33,11 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[80vh]">
           {/* Left Content */}
           <div
-            className={`space-y-6 lg:space-y-8 transform transition-all duration-1000 ${isVisible ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"}`}
+            className={`space-y-6 lg:space-y-8 transform transition-all duration-1000 ${
+              isVisible
+                ? "translate-x-0 opacity-100"
+                : "-translate-x-10 opacity-0"
+            }`}
           >
             {/* Label */}
             <div className="inline-block">
@@ -44,36 +48,59 @@ export default function Hero() {
 
             {/* Main Heading */}
             <div className="space-y-4">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight animate-slide-up">
-                Effortless Hiring, Streamlined Data Management 
+              <h1 className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold flex text-center sm:text-left text-gray-900 leading-tight animate-slide-up">
+                Effortless Hiring, Streamlined Data Management
               </h1>
             </div>
 
             {/* Description */}
             <p
-              className={`text-gray-600 text-base lg:text-lg leading-relaxed max-w-lg transform transition-all duration-1000 delay-300 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"}`}
+              className={`text-gray-600 text-base flex text-center sm:text-left lg:text-lg leading-relaxed max-w-lg transform transition-all duration-1000 delay-300 ${
+                isVisible
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-5 opacity-0"
+              }`}
             >
-              Manage your hiring process from sourcing to interviews, all in one 
-place.
+              Manage your hiring process from sourcing to interviews, all in one
+              place.
             </p>
 
             {/* CTA Button */}
-        <div className="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-4 w-full sm:w-auto">
+            <div className="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-4 w-full sm:w-auto">
+              <Link
+                to="demo"
+                smooth={true}
+                duration={500}
+                offset={-70}
+                className="w-full sm:w-auto block"
+              >
                 <button className="flex items-center justify-center gap-2 group bg-gradient-to-r from-white to-[#58c8b6] text-black px-4 sm:px-6 py-3 cursor-pointer rounded-full font-semibold hover:from-[#58c8b6] hover:to-white shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-300 w-full sm:w-auto text-sm sm:text-base">
-                 Book a Free Demo
-                   <ArrowRight className="text-lg sm:text-xl group-hover:translate-x-2 group-hover:-rotate-45 transition-all duration-300" />
-                 </button>
-
-                <button className="flex items-center justify-center gap-2 group bg-gradient-to-r from-white to-[#58c8b6] text-black px-4 sm:px-6 py-3 rounded-full cursor-pointer hover:from-[#58c8b6] hover:to-white font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-300 w-full sm:w-auto text-sm sm:text-base">
-                   Learn More
-<ArrowRight className="text-lg sm:text-xl group-hover:translate-x-2 group-hover:-rotate-45 transition-all duration-300" />
+                  Book a Free Demo
+                  <ArrowRight className="text-lg sm:text-xl group-hover:translate-x-2 group-hover:-rotate-45 transition-all duration-300" />
                 </button>
-              </div>
+              </Link>
+              <Link
+                to="features"
+                smooth={true}
+                duration={500}
+                offset={-70}
+                className="w-full sm:w-auto block"
+              >
+                <button className="flex items-center justify-center gap-2 group bg-gradient-to-r from-white to-[#58c8b6] text-black px-4 sm:px-6 py-3 rounded-full cursor-pointer hover:from-[#58c8b6] hover:to-white font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-300 w-full sm:w-auto text-sm sm:text-base">
+                  Learn More
+                  <ArrowRight className="text-lg sm:text-xl group-hover:translate-x-2 group-hover:-rotate-45 transition-all duration-300" />
+                </button>
+              </Link>
+            </div>
           </div>
 
           {/* Right Image */}
           <div
-            className={`relative transform transition-all duration-1000 delay-700 ${isVisible ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"}`}
+            className={`relative transform transition-all duration-1000 delay-700 ${
+              isVisible
+                ? "translate-x-0 opacity-100"
+                : "translate-x-10 opacity-0"
+            }`}
           >
             <div className="relative">
               {/* Image Container with Hover Effect */}
@@ -81,7 +108,7 @@ place.
                 <img
                   src="/hero.jpg"
                   alt="Professional smiling man with glasses holding coffee mug"
-                  className="w-full h-auto object-cover"
+                  className="w-full h-[450px] object-cover"
                 />
 
                 {/* Overlay for better text contrast if needed */}
@@ -105,39 +132,41 @@ place.
       {/* Custom CSS for additional animations */}
       <style jsx>{`
         @keyframes fade-in {
-          from { opacity: 0; }
-          to { opacity: 1; }
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
         }
-        
+
         @keyframes slide-up {
-          from { 
-            opacity: 0; 
-            transform: translateY(30px); 
+          from {
+            opacity: 0;
+            transform: translateY(30px);
           }
-          to { 
-            opacity: 1; 
-            transform: translateY(0); 
+          to {
+            opacity: 1;
+            transform: translateY(0);
           }
         }
-        
+
         .animate-fade-in {
           animation: fade-in 1s ease-out;
         }
-        
+
         .animate-slide-up {
           animation: slide-up 0.8s ease-out forwards;
           opacity: 0;
         }
-        
+
         .hover\\:shadow-3xl:hover {
           box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
         }
       `}</style>
     </div>
-  )
+  );
 }
-
-
 
 // "use client"
 // import { ArrowRight } from "lucide-react"
