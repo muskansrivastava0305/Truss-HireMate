@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import ContactImg from "../assets/contact.png"; // Use your local image
+import ContactImg from "../assets/Contact.png"; // Use your local image
 
 const Contact = () => {
   return (
