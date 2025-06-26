@@ -9,6 +9,24 @@ export default function Hero() {
     setIsVisible(true);
   }, []);
 
+
+  const images = [
+  "/hero1.png",
+  "/hero2.png",
+  "/hero1.png",
+  "/hero2.png",
+];
+
+
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % images.length);
+    }, 3500);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 to-green-100 relative overflow-hidden">
       {/* Background Geometric Shapes */}
@@ -29,7 +47,7 @@ export default function Hero() {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 container mx-auto px-4 py-12 lg:py-20">
+      <div className="relative z-10 container mx-auto px-4 py-12 lg:py-14">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[80vh]">
           {/* Left Content */}
           <div
@@ -95,37 +113,20 @@ export default function Hero() {
           </div>
 
           {/* Right Image */}
-          <div
-            className={`relative transform transition-all duration-1000 delay-700 ${
-              isVisible
-                ? "translate-x-0 opacity-100"
-                : "translate-x-10 opacity-0"
-            }`}
-          >
-            <div className="relative">
-              {/* Image Container with Hover Effect */}
-              <div className="relative overflow-hidden rounded-2xl shadow-2xl transform transition-all duration-500 hover:scale-105 hover:shadow-3xl">
-                <img
-                  src="/hero.jpg"
-                  alt="Professional smiling man with glasses holding coffee mug"
-                  className="w-full h-[450px] object-cover"
-                />
-
-                {/* Overlay for better text contrast if needed */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-
-              {/* Floating Elements */}
-              <div
-                className="absolute -top-4 -right-4 w-8 h-8 bg-yellow-400 rounded-full animate-bounce"
-                style={{ animationDelay: "1s" }}
-              ></div>
-              <div
-                className="absolute -bottom-6 -left-6 w-12 h-12 bg-green-400 rounded-full animate-pulse"
-                style={{ animationDelay: "2s" }}
-              ></div>
-            </div>
-          </div>
+         <div className="relative w-full max-w-xl mx-auto overflow-hidden rounded-xl h-60 sm:h-72 md:h-80 lg:h-[400px]">
+      {images.map((src, i) => (
+        <img
+          key={i}
+          src={src}
+          alt={`Image ${i}`}
+          className={`absolute top-0 left-0 w-full h-full object-cover transition-all duration-1000 ease-in-out rounded-xl
+            ${i === index
+              ? "opacity-100 scale-100 translate-x-0 z-20"
+              : "opacity-0 scale-90 -translate-x-full z-10"}
+          `}
+        />
+      ))}
+    </div>
         </div>
       </div>
 
@@ -134,7 +135,6 @@ export default function Hero() {
         @keyframes fade-in {
           from {
             opacity: 0;
-          }
           to {
             opacity: 1;
           }
@@ -168,95 +168,30 @@ export default function Hero() {
   );
 }
 
-// "use client"
-// import { ArrowRight } from "lucide-react"
-// import { motion } from "framer-motion"
+// ImageSlider component moved outside Hero
+function ImageSlider({ images }) {
+  const [current, setCurrent] = useState(0);
 
-// export const FadeUp = (delay) => {
-//   return {
-//     initial: {
-//       opacity: 0,
-//       y: 50,
-//     },
-//     animate: {
-//       opacity: 1,
-//       y: 0,
-//       transition: {
-//         type: "spring",
-//         stiffness: 100,
-//         duration: 0.5,
-//         delay: delay,
-//         ease: "easeInOut",
-//       },
-//     },
-//   }
-// }
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length);
+    }, 3000); // 3 seconds delay
 
-// const Hero = () => {
-//   return (
-//     <section className="bg-[#027864] overflow-hidden relative px-4 sm:px-6 md:px-8 lg:px-10 py-1">
-//       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 min-h-[500px] sm:min-h-[600px] md:min-h-[650px]">
-//         {/* Brand Info */}
-//         <div className="flex flex-col justify-center py-8 sm:py-12 md:py-14  relative z-20">
-//           <div className="text-center md:text-left space-y-6 sm:space-y-8 lg:space-y-10 lg:max-w-[400px]">
-//             <motion.h1
-//               variants={FadeUp(0.6)}
-//               initial="initial"
-//               animate="animate"
-//               className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl w-full max-w-[350px] sm:max-w-[400px] md:max-w-none mx-auto md:mx-0 text-gray-100 font-bold !leading-snug"
-//             >
-//               Your Next Great Hire Is <span className="text-secondary">Just</span> a Click Away
-//             </motion.h1>
-//             <motion.div
-//               variants={FadeUp(0.8)}
-//               initial="initial"
-//               animate="animate"
-//               className="flex justify-center md:justify-start"
-//             >
-//               <div className="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-4 w-full sm:w-auto">
-//                 <button className="flex items-center justify-center gap-2 group bg-gradient-to-r from-white to-[#58c8b6] text-black px-4 sm:px-6 py-3 cursor-pointer rounded-full font-semibold hover:from-[#58c8b6] hover:to-white shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-300 w-full sm:w-auto text-sm sm:text-base">
-//                   Book a Free Demo
-//                   <ArrowRight className="text-lg sm:text-xl group-hover:translate-x-2 group-hover:-rotate-45 transition-all duration-300" />
-//                 </button>
+    return () => clearInterval(interval);
+  }, [images.length]);
 
-//                 <button className="flex items-center justify-center gap-2 group bg-gradient-to-r from-white to-[#58c8b6] text-black px-4 sm:px-6 py-3 rounded-full cursor-pointer hover:from-[#58c8b6] hover:to-white font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-300 w-full sm:w-auto text-sm sm:text-base">
-//                   Learn More
-//                   <ArrowRight className="text-lg sm:text-xl group-hover:translate-x-2 group-hover:-rotate-45 transition-all duration-300" />
-//                 </button>
-//               </div>
-//             </motion.div>
-//           </div>
-//         </div>
-
-//         {/* Hero Image */}
-//         <div className="flex justify-center items-center relative">
-//           <motion.img
-//             initial={{ x: 50, opacity: 0 }}
-//             animate={{ x: 0, opacity: 1 }}
-//             transition={{ duration: 0.6, delay: 0.4, ease: "easeInOut" }}
-//             src="/placeholder.svg?height=400&width=400"
-//             alt="Hero illustration"
-//             className="w-[280px] sm:w-[350px] md:w-[400px] lg:w-[500px] xl:w-[550px] rounded-b-full relative z-10 drop-shadow mb-8 sm:mb-12 md:mb-20"
-//           />
-//           <motion.div
-//             initial={{ x: -50, opacity: 0 }}
-//             animate={{ x: 0, opacity: 1 }}
-//             transition={{ duration: 0.6, delay: 0.2, ease: "easeInOut" }}
-//             className="absolute -bottom-16 sm:-bottom-24 md:-bottom-32 w-[400px] sm:w-[500px] md:w-[600px] lg:w-[800px] xl:w-[1100px] z-[1] hidden sm:block"
-//           >
-//             {/* Blob SVG */}
-//             <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="w-full h-full opacity-20">
-//               <path
-//                 fill="#58c8b6"
-//                 d="M44.7,-76.4C58.8,-69.2,71.8,-59.1,79.6,-45.8C87.4,-32.6,90,-16.3,89.8,-0.2C89.6,15.9,86.6,31.8,78.9,45.2C71.2,58.6,58.8,69.5,44.7,76.4C30.6,83.3,15.3,86.2,-0.2,86.5C-15.7,86.8,-31.4,84.5,-45.2,77.6C-59,70.7,-71,59.2,-78.6,45.8C-86.2,32.4,-89.4,16.2,-89.2,0.1C-89,-16,-85.4,-32,-78.2,-45.4C-71,-58.8,-60.2,-69.6,-46.2,-76.8C-32.2,-84,-16.1,-87.6,0.1,-87.7C16.3,-87.8,32.6,-84.4,44.7,-76.4Z"
-//                 transform="translate(100 100)"
-//               />
-//             </svg>
-//           </motion.div>
-//         </div>
-//       </div>
-//     </section>
-//   )
-// }
-
-// export default Hero
+  return (
+    <div className="relative w-full max-w-lg mx-auto h-64 overflow-hidden rounded-xl">
+      {images.map((src, index) => (
+        <img
+          key={index}
+          src={src}
+          alt={`Slide ${index}`}
+          className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
+            index === current ? "opacity-100 z-10" : "opacity-0 z-0"
+          }`}
+        />
+      ))}
+    </div>
+  );
+}
