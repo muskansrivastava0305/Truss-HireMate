@@ -13,8 +13,8 @@ export default function Hero() {
   const images = [
   "/hero1.png",
   "/hero2.png",
-  "/hero1.png",
-  "/hero2.png",
+  "/hero3.png",
+  "/hero4.png",
 ];
 
 
