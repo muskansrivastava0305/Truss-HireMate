@@ -32,14 +32,23 @@ export default function DemoBookingForm() {
       <div className="w-full max-w-6xl flex flex-col md:flex-row items-center justify-between gap-10">
         {/* Left Side */}
         <div className="w-full md:w-1/2 text-gray-100 md:pr-8">
+        <div className="">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Book your free
             <br />
             demo!
           </h1>
-          <p className="text-lg md:text-xl text-teal-100 mb-8">
+          <p className="text-lg md:text-xl text-teal-100">
             See how ThreelineNote can transform your hiring process.
           </p>
+          </div>
+          <div className="">
+            <img
+              src="book2.png"
+              alt="Demo Preview"
+              className="w-full h-auto "
+            />
+          </div>
         </div>
         {/* Right Side - Form */}
         <div className="w-full md:w-1/2">
