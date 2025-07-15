@@ -239,7 +239,7 @@ const Feature = () => {
 
       {/* interview images*/}
       <section className=" sm:py-2 bg-gradient-to-br from-[#027864] via-teal-500 to-[#027864]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+        <div className="max-w-7xl pt-12 mx-auto px-4 sm:px-6 lg:px-8 h-full">
           <div className="text-center space-y-4 sm:mb-12">
             <h2 className="text-3xl md:text-5xl font-semibold text-white">
               Ready to Transform Your Hiring?
@@ -251,23 +251,16 @@ const Feature = () => {
               demo today!
             </p>
           </div>
-          {/* <div className="flex mt-16 h-full">
-            <div className=" flex flex-col sm:flex-row h-[500px] w-[700px]  mb-24 sm:mb-2 sm:mt-12 gap-4 sm:gap-12">
+          <div className=" mt-16 h-full ">
+            <div className=" flex flex-col justify-center items-center sm:flex-row  mb-24 sm:mb-12 sm:mt-12 gap-4 sm:gap-12">
               <img
-                src="/Frame2.png"
+                src="interview 1.png"
                 alt="TrussHireMate Demo"
-                className="max-w-full h-[300px] w-[400px] sm:h-[500px] sm:w-[500px] transform transition-transform duration-500 hover:scale-105"
-              />
-              <div className="text-yellow-600 text-4xl flex justify-center items-center ">
-                <ArrowRight className="w-8 h-8 sm:w-12 sm:h-12 text-black border rounded-full sm:mb-4 " />
-              </div>
-              <img
-                src="/Frame1.png"
-                alt="TrussHireMate Demo"
-                className="max-w-full h-[300px] sm:h-[500px] w-[400px] sm:w-[500px] transform transition-transform duration-500 hover:scale-105 "
-              />
+                className="max-w-full h-auto sm:h-[700px] sm:w-[] transform transition-transform duration-500 hover:scale-105 "
+              /> 
+             
             </div>
-          </div> */}
+          </div>
         </div>
       </section>
 
