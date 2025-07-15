@@ -154,10 +154,10 @@ const Feature = () => {
       <section
         id="how-it-works"
         ref={howItWorksRef}
-        className="py-8 sm:py-16 bg-gray-50"
+        className=" bg-gray-50"
         data-animate
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-8 sm:mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
               Get Started with Smart Hiring
@@ -169,7 +169,7 @@ const Feature = () => {
             </p>
           </div>
 
-          <div className="relative flex justify-center items-center h-[350px] sm:h-[600px] mb-8 sm:mb-16">
+          <div className="relative flex justify-center items-center h-[350px] sm:h-[550px] mb-8 sm:mb-16">
             {/* Carousel Image */}
             <img
               src={images[currentIndex]}
@@ -195,8 +195,8 @@ const Feature = () => {
           </div>
         </div>
 
-        <div className="max-w-auto mx-auto px-4 sm:px-6 lg:px-8 bg-gray-200 py-14">
-          <div className="text-center space-y-4 mb-12 sm:mb-16">
+        <div className="max-w-auto mx-auto px-4 sm:px-6 lg:px-16 bg-gray-200 py-14">
+          <div className="text-center space-y-4 mb-12 sm:mb-">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
               How It Works
             </h2>
@@ -238,7 +238,7 @@ const Feature = () => {
       </section>
 
       {/* interview images*/}
-      <section className="py-20 sm:py-2 bg-gradient-to-br from-[#027864] via-teal-500 to-[#027864]">
+      <section className=" sm:py-2 bg-gradient-to-br from-[#027864] via-teal-500 to-[#027864]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
           <div className="text-center space-y-4 sm:mb-12">
             <h2 className="text-3xl md:text-5xl font-semibold text-white">
@@ -251,7 +251,7 @@ const Feature = () => {
               demo today!
             </p>
           </div>
-          <div className="flex mt-16 h-full">
+          {/* <div className="flex mt-16 h-full">
             <div className=" flex flex-col sm:flex-row h-[500px] w-[700px]  mb-24 sm:mb-2 sm:mt-12 gap-4 sm:gap-12">
               <img
                 src="/Frame2.png"
@@ -267,7 +267,7 @@ const Feature = () => {
                 className="max-w-full h-[300px] sm:h-[500px] w-[400px] sm:w-[500px] transform transition-transform duration-500 hover:scale-105 "
               />
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -294,7 +294,7 @@ const Feature = () => {
 
       {/*Interview process*/}
       <section className="flex flex-col sm:flex-row w-full py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:w-1/2">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 sm:w-1/2">
           <div className=" flex flex-col sm:flex-col gap-4 space-y-4 mb-12 sm:mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
               Streamlined Interview Process
@@ -314,8 +314,8 @@ const Feature = () => {
             </h1>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:w-1/2 h-auto">
-          <img src="/interview.png" alt="Interview Process" className="w-full sm:h-[450px] h-[250px]" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 sm:w-1/2 h-auto">
+          <img src="/interview.png" alt="Interview Process" className="w-full sm:h-[400px] h-[250px]" />
         </div>
       </section>
     </div>

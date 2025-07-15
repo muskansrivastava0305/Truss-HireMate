@@ -29,7 +29,7 @@ const testimonials = [
 
 export default function TestimonialSlider() {
   return (
-    <section className="bg-white py-20 px-4">
+    <section className="bg-white py-20 px-4 sm:px-16">
       <div className="max-w-6xl mx-auto text-center mb-10">
         <h2 className="text-3xl font-bold text-gray-800">
           What Our Users Are Saying
